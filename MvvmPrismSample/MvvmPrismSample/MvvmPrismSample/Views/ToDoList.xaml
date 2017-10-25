@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MvvmPrismSample"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MvvmPrismSample.ToDoList">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ListView x:Name="todoList"
+                      AbsoluteLayout.LayoutFlags="All"
+                      AbsoluteLayout.LayoutBounds="0,0,1,1"
+                      HasUnevenRows="True"
+                      CachingStrategy="RecycleElement"
+                      ItemsSource="{Binding ToDoList}">
+                <!--RefreshCommand="{Binding RefreshCommand}"-->
+                <!--<ListView.Behaviors>
+                    <b:EventToCommandBehavior EventName="ItemTapped"
+                                              Command="{Binding ItemTappedCommand}"
+                                              EventArgsParameterPath="Item" />
+                </ListView.Behaviors>-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <AbsoluteLayout Padding="16,8,16,8" HeightRequest="60"
+                                            VerticalOptions="FillAndExpand">
+                                <Label Font="Roboto" FontSize="16.0"
+                                       Text="{Binding Name}"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds ="0,.2">
+                                </Label>
+                                <Label Font="Roboto" FontSize="14.0"
+                                       Text="{Binding Date, StringFormat='{0:d (ddd)}'}"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds =".05,.9">
+                                </Label>
+                                <Label Font="Roboto" FontSize="14.0"
+                                       Text="{Binding Time, StringFormat='{}{0:hh}:{0:mm}'}"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds =".45,.9">
+                                </Label>
+                            </AbsoluteLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Greeting"
+                    BackgroundColor="{Binding BgColor}"
+                    Command="{Binding GreetingCommand}"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds=".5,1">
+            </Button>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
