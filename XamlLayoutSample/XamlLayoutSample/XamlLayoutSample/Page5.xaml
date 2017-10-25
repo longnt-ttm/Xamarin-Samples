@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlLayoutSample.Page5">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#FFFFFF">
+            <AbsoluteLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                            Padding="0,0,0,0"
+                            BackgroundColor="Beige"
+                            WidthRequest="250" HeightRequest="250">
+                <Label Text="Item 1"
+                       AbsoluteLayout.LayoutFlags="None"
+                       AbsoluteLayout.LayoutBounds ="0, 0, 50, 250"
+                       VerticalOptions="Center" />
+                <Label Text="Item 2"
+                       AbsoluteLayout.LayoutFlags="None"
+                       AbsoluteLayout.LayoutBounds ="50, 0, 200, 75"
+                       BackgroundColor="CadetBlue"/>
+                <Label Text="Item 3"
+                       HorizontalTextAlignment="End"
+                       AbsoluteLayout.LayoutFlags="None"
+                       AbsoluteLayout.LayoutBounds ="50, 75, 100, 75"
+                       BackgroundColor="DeepSkyBlue"/>
+                <Label Text="Item 4"
+                       AbsoluteLayout.LayoutFlags="None"
+                       AbsoluteLayout.LayoutBounds ="150, 75, 100, 75"
+                       BackgroundColor="Aquamarine"/>
+                <Label Text="Item 5"
+                       AbsoluteLayout.LayoutFlags="None"
+                       AbsoluteLayout.LayoutBounds ="50, 150, 200, 100"
+                       BackgroundColor="DarkSeaGreen"/>
+                <Label Text="Overlapping item"
+                       FontSize="Small"
+                       AbsoluteLayout.LayoutFlags="None"
+                       AbsoluteLayout.LayoutBounds ="25, 50, 75, 50"
+                       BackgroundColor="Indigo" TextColor="White"/>
+            </AbsoluteLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

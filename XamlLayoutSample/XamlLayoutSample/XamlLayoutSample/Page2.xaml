@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlLayoutSample.Page2">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#FFFFFF">
+            <StackLayout BackgroundColor="Beige" Orientation="Horizontal"
+                         VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                         WidthRequest="250" HeightRequest="250">
+                <Label Text="Item 1" BackgroundColor="Beige" />
+                <Label Text="Item 2" BackgroundColor="CadetBlue" />
+                <Label Text="Item 3" BackgroundColor="DeepSkyBlue" />
+                <Label Text="Item 4" BackgroundColor="Aquamarine" />
+                <Label Text="Item 5" BackgroundColor="DarkSeaGreen" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
