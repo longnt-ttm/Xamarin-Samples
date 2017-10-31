@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace MvvmPrismSample
+namespace MvvmPrismSample.Views
 {
     public partial class ToDoList : ContentPage
     {

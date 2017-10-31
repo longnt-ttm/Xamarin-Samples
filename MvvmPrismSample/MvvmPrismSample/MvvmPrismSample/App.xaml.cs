@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MvvmPrismSample.Views;
+using Prism.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,28 +9,24 @@ using Xamarin.Forms;
 
 namespace MvvmPrismSample
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MvvmPrismSample.ToDoList();
         }
 
-        protected override void OnStart()
+        protected override void OnInitialized()
         {
-            // Handle when your app starts
+
+            NavigationService.NavigateAsync("NavigationPage/ToDoList");
         }
 
-        protected override void OnSleep()
+        protected override void RegisterTypes()
         {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
+            Container.RegisterTypeForNavigation<NavigationPage>();
+            Container.RegisterTypeForNavigation<ToDoList>();
+            Container.RegisterTypeForNavigation<ToDoDetails>();
         }
     }
 }

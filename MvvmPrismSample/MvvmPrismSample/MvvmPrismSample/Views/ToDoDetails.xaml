@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="{Binding Title}"
+             x:Class="MvvmPrismSample.Views.ToDoDetails">
+    <ContentPage.Content>
+        <StackLayout Padding="8,8,8,8">
+
+            <Label Text="Note"/>
+            <Frame BackgroundColor="GhostWhite" OutlineColor="Black">
+                <Label Text="{Binding TheItem.Note}"/>
+            </Frame>
+
+            <Label Text="Date &amp; Time"/>
+            <Frame BackgroundColor="GhostWhite" OutlineColor="Black" Margin="0,0,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Font="Roboto" FontSize="14.0"
+                           Text="{Binding TheItem.Date, StringFormat='{0:yy}/{0:MM}/{0:dd}'}"/>
+                    <Label Font="Roboto" FontSize="14.0"
+                           Text="{Binding TheItem.Time, StringFormat='{0:hh}:{0:mm}'}"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="GhostWhite" OutlineColor="Black" Margin="0,0,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Done"/>
+                    <Switch IsToggled="{Binding TheItem.Done}"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
